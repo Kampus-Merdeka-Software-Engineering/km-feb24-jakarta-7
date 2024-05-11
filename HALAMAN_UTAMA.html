@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Project Team 7 Section Jakarta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('bgbd.jpg');
+            margin: 0;
+            padding: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        header {
+            background-color: #f0f0f0;
+            /* Warna putih pucat */
+            color: #333;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            /* Menjadikan header sebagai posisi relatif */
+        }
+
+        h1 {
+            margin-top: 35px;
+            font-size: 36px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .logo-container {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        .logo1 {
+            max-width: 80px;
+            /* Ubah lebar maksimum sesuai kebutuhan */
+            height: auto;
+            margin-bottom: 10px;
+            /* Tambahkan margin bawah untuk jarak antara gambar */
+        }
+
+        .logo2 {
+            max-width: 50px;
+            /* Ubah lebar maksimum sesuai kebutuhan */
+            height: auto;
+            margin-bottom: 10px;
+            /* Tambahkan margin bawah untuk jarak antara gambar */
+        }
+
+        .combo-box-container {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            /* Mengatur posisi ke kanan */
+        }
+
+        #page-selection {
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #fff;
+            color: #333;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        #page-selection:hover {
+            border-color: #666;
+            background-color: #f9f9f9;
+        }
+
+        #page-selection:focus {
+            outline: none;
+            border-color: #666;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Team 7 Section Jakarta</h1>
+        <div class="logo-container">
+            <img src="logokampusmerdeka.png" alt="Logo Kampus Merdeka" class="logo1">
+            <img src="logorevou.png" alt="Logo Revou" class="logo2">
+        </div>
+        <div class="combo-box-container">
+            <label for="page-selection">Pilih Halaman:</label>
+            <select id="page-selection" onchange="navigatePage()">
+                <option value="halaman_utama">Halaman Utama</option>
+                <option value="halaman_anggota">Halaman Anggota</option>
+            </select>
+        </div>
+    </header>
+    <script>
+        function navigatePage() {
+            var selectedPage = document.getElementById("page-selection").value;
+            if (selectedPage === "halaman_anggota") {
+                window.location.href = "file:///D:/CAPSTONE%20PROJECT/ANGGOTA.html";
+            }
+        }
+    </script>
+</body>
+
+</html>
