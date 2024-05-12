@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #f3f2ff;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: flex;
+}
+
+
+/* sidebar */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3em;
+  width: 200px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  /* background: rgb(83,33,202);
+  background: linear-gradient(180deg, rgba(83,33,202,1) 0%, rgba(27,0,92,1) 100%); */
+
+  background-image: linear-gradient(
+    to bottom,
+    #b07cff,
+    #a17cff,
+    #907dff,
+    #7f7dff,
+    #6b7dff,
+    #6b7dff,
+    #6b7dff,
+    #6b7dff,
+    #7f7dff,
+    #907dff,
+    #a17cff,
+    #b07cff
+  );
+
+  padding: 2em 1em;
+  color: #fdfcff;
+}
+
+.content {
+  margin-left: 220px;
+  padding: 20px;
+  width: 100%;
+  color: #454C5E;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  column-gap: 1em;
+  padding-block: 0.5em;
+  padding-inline: 1em;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  background: transparent;
+  transition: background .3s ease;
+  -webkit-transition: background .3s ease;
+  -moz-transition: background .3s ease;
+  -ms-transition: background .3s ease;
+  -o-transition: background .3s ease;
+}
+
+.link:hover {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.27);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13.3px);
+  -webkit-backdrop-filter: blur(13.3px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  color: white;
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-logo img {
+  width: 80px;
+}
+
+/* chart */
+.chart {
+  margin-top: 2.5em;
+}
+
+/* summary */
+.summary {
+  display: flex;
+  justify-content: space-around;
+}
+
+.total {
+  text-align: center;
+  background: rgb(176,124,255);
+  background: linear-gradient(140deg, rgba(176,124,255,1) 0%, rgba(74,125,255,1) 100%);
+  padding: .5em 3em;
+  color: #fdfcff;
+
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+
