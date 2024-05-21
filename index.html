@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Dashboard</title>
+    <title>Team 7 - Bike Sales Report</title>
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,6 +19,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- chart css -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./src/components/bar-chart/bar-chart.css" />
   </head>
   <body>
     <div class="container">
@@ -29,55 +31,111 @@
           <h1>Team 7</h1>
         </div>
         <div class="sidebar-links">
-          <div class="link dashboard active">
+          <div class="link dashboard active" data-id="dashboard">
             <i class="fa-solid fa-house"></i>
             <p>Dashboard</p>
           </div>
-          <div class="link stats">
-            <i class="fa-solid fa-chart-simple"></i>
-            <p>Stats</p>
-          </div>
-          <div class="link about">
-            <i class="fa-solid fa-folder"></i>
+          <div class="link about" data-id="about">
+            <i class="fa-solid fa-circle-info"></i>
             <p>About</p>
           </div>
-          <div class="link team">
+          <div class="link team" data-id="team">
             <i class="fa-solid fa-user"></i>
             <p>Team</p>
           </div>
         </div>
       </aside>
       <main class="content">
-        <header>
-          <div class="header-title">
-            <h1>Welcome Folks!</h1>
-            <p>This is Australia Bike Sales Report</p>
-          </div>
-          <div class="header-logo">
-            <img src="./assets/ausie-circle.png" alt="">
-          </div>
-        </header>
+        <article id="dashboard">
+          <header>
+            <div class="header-title">
+              <h1 class="title">Welcome Folks!</h1>
+              <p>This is Australia Bike Sales Report</p>
+            </div>
+            <div class="header-logo">
+              <img src="./assets/ausie-circle.png" alt="" />
+            </div>
+          </header>
 
-        <div class="chart">
-          <div class="summary">
-            <div class="total order">
-              <p>Total Order</p>
-              <h1>212 Rb</h1>
+          <div class="chart">
+            <div class="summary">
+              <div class="total order">
+                <p>Total Order</p>
+                <h1>212 Rb</h1>
+              </div>
+              <div class="total revenue">
+                <p>Revenue</p>
+                <h1>21,08 jt</h1>
+              </div>
+              <div class="total profit">
+                <p>Total Profit</p>
+                <h1>6,71 jt</h1>
+              </div>
             </div>
-            <div class="total revenue">
-              <p>Revenue</p>
-              <h1>21,08 jt</h1>
-            </div>
-            <div class="total profit">
-              <p>Total Profit</p>
-              <h1>6,71 jt</h1>
+
+            <div class="another-chart">
+              <div class="chart-profit">
+                <canvas id="lineChart"></canvas>
+              </div>
+              <div class="chart-revenue">
+                <canvas id="barChart"></canvas>
+              </div>
+              <div class="chart-order">
+                <canvas id="barLineChart"></canvas>
+              </div>
             </div>
           </div>
-        </div>
+        </article>
 
+        <article id="about">
+          <header class="about-header">
+            <h1 class="title">About Capstone</h1>
+            <p class="subtitle">
+              Our Expert team is made up of creatives with technical know-how,
+              <br />
+              strategists who think outside the box, and developers who push
+              innovation.
+            </p>
+          </header>
+          <div class="about-content">
+            <div class="col-1">
+              <h4>Business Understanding</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, illum quae! Animi excepturi fugit repellendus a nihil, commodi voluptate quibusdam.</p>
+            </div>
+            <div class="col-2">
+              <h4>Background</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, illum quae! Animi excepturi fugit repellendus a nihil, commodi voluptate quibusdam.</p>
+            </div>
+            <div class="col-3">
+              <h4>Problem Statement</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, illum quae! Animi excepturi fugit repellendus a nihil, commodi voluptate quibusdam.</p>
+            </div>
+            <div class="col-4">
+              <h4>Objective</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, illum quae! Animi excepturi fugit repellendus a nihil, commodi voluptate quibusdam.</p>
+            </div>
+          </div>
+        </article>
+
+        <article id="team">
+          <header class="team-header">
+            <h1 class="title">Meet Our Team</h1>
+            <p class="subtitle">
+              Our Expert team is made up of creatives with technical know-how,
+              <br />
+              strategists who think outside the box, and developers who push
+              innovation.
+            </p>
+          </header>
+          <div class="team-cards-container" id="team-cards-container"></div>
+        </article>
       </main>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="./src/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./src/components/bar-chart/bar-chart.js"></script>
+    <script src="./src/components/line-chart/line-chart.js"></script>
+    <script src="./src/components/bar-line-chart/bar-line-chart.js"></script>
   </body>
 </html>

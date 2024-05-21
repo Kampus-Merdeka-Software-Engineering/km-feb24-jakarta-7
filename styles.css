@@ -1,3 +1,5 @@
+*::after,
+*::before,
 * {
   box-sizing: border-box;
   padding: 0;
@@ -13,9 +15,7 @@ body {
   display: flex;
 }
 
-
 /* sidebar */
-
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -25,6 +25,7 @@ body {
   left: 0;
   top: 0;
   bottom: 0;
+  z-index: 999;
 
   background-image: linear-gradient(
     to bottom,
@@ -47,10 +48,9 @@ body {
 }
 
 .content {
-  margin-left: 220px;
-  padding: 20px;
+  margin-left: 200px;
   width: 100%;
-  color: #454C5E;
+  color: #454c5e;
 }
 
 .text-center {
@@ -74,14 +74,15 @@ body {
   border: 1px solid transparent;
   border-radius: 16px;
   background: transparent;
-  transition: background .3s ease;
-  -webkit-transition: background .3s ease;
-  -moz-transition: background .3s ease;
-  -ms-transition: background .3s ease;
-  -o-transition: background .3s ease;
+  transition: background 0.3s ease;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -ms-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
 }
 
-.link:hover, .link.active {
+.link:hover,
+.link.active {
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -96,6 +97,11 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 
   color: white;
+}
+
+#dashboard {
+  padding-bottom: 2.5em;
+  padding-inline: 20px;
 }
 
 /* header */
@@ -122,9 +128,13 @@ header {
 
 .total {
   text-align: center;
-  background: rgb(176,124,255);
-  background: linear-gradient(140deg, rgba(176,124,255,1) 0%, rgba(74,125,255,1) 100%);
-  padding: .5em 3em;
+  background: rgb(176, 124, 255);
+  background: linear-gradient(
+    140deg,
+    rgba(176, 124, 255, 1) 0%,
+    rgba(74, 125, 255, 1) 100%
+  );
+  padding: 0.5em 3em;
   color: #fdfcff;
 
   border-radius: 10px;
@@ -134,4 +144,309 @@ header {
   -o-border-radius: 10px;
 }
 
+/* another chart */
+.another-chart {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "profit profit"
+    "revenue order";
+  gap: 1em;
+}
 
+.chart-revenue {
+  grid-area: revenue;
+  width: 37vw;
+  height: 300px;
+}
+.chart-profit {
+  grid-area: profit;
+  width: 78vw;
+  height: 300px;
+}
+.chart-order {
+  grid-area: order;
+  width: 37vw;
+  height: 300px;
+}
+
+.chart-revenue,
+.chart-profit,
+.chart-order {
+  margin: auto;
+  background-color: #fff;
+  padding: 1.5em;
+
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+
+  box-shadow: 0px 0px 34px -1px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 0px 0px 34px -1px #454c5e14;
+  -moz-box-shadow: 0px 0px 34px -1px rgba(0, 0, 0, 0.45);
+}
+
+/* about */
+
+#about {
+  padding-block: 2.5em;
+  background-image: url('https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-content {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    'col-1 col-2'
+    'col-3 col-4'
+  ;
+  gap: 3em;
+  padding: 20px;
+}
+
+.col-1 {
+  grid-area: col-1;
+}
+.col-2 {
+  grid-area: col-2;
+  
+}
+.col-3 {
+  grid-area: col-3;
+}
+.col-4 {
+  grid-area: col-4;
+}
+
+
+/* team */
+
+#team {
+  /* background-image: url("./assets/mesh-gradient.png"); */
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
+}
+
+.team-header, .about-header {
+  flex-direction: column;
+  text-align: center;
+}
+
+.title {
+  font-size: 2em;
+  background: linear-gradient(to right, #B07CFF, #4A7DEE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.team-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+  margin: 20px auto;
+  justify-items: center;
+}
+
+.team-card {
+  width: 100%;
+  max-width: 270px;
+  height: 340px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+
+  box-shadow: 0px 0px 34px -1px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 0px 0px 34px -1px #454c5e14;
+  -moz-box-shadow: 0px 0px 34px -1px rgba(0, 0, 0, 0.45);
+}
+
+.card-image {
+  width: 100%;
+  height: 210px;
+  background-image: url("./assets/daffa.jpg");
+  border-radius: 16px;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-content {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.card-social {
+  margin-top: 8px;
+  display: flex;
+  column-gap: 5px;
+  justify-content: center;
+}
+
+.card-social div {
+  padding: 0 5px;
+  display: inline-block;
+  font-size: 1.2em;
+  color: white;
+  background: rgba(255, 255, 255, 0.39);
+  border-radius: 4px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(4.2px);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: #454c5e;
+  text-decoration: none; 
+}
+
+.team-cards-container {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+
+/* media */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .summary {
+    flex-direction: column;
+    row-gap: 0.5em;
+  }
+
+  .link p,
+  .sidebar-logo {
+    display: none;
+  }
+
+  .sidebar-links {
+    margin: auto 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .sidebar {
+    width: unset;
+    padding: 0;
+    right: 0;
+    top: 93%;
+    flex-direction: row;
+    background: rgb(176, 124, 255);
+    background: linear-gradient(
+      140deg,
+      rgba(176, 124, 255, 1) 0%,
+      rgba(74, 125, 255, 1) 100%
+    );
+  }
+
+  .content {
+    margin: 0;
+    /* padding: 5px; */
+  }
+
+  .chart {
+    margin-top: 0.5em;
+  }
+
+  /* another chart */
+  .another-chart {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "profit "
+      "revenue"
+      "order";
+    gap: 2em;
+    padding-bottom: 20%;
+  }
+
+  .chart-revenue,
+  .chart-profit,
+  .chart-order {
+    width: 90vw;
+    /* height: 40vh; */
+  }
+
+  .team-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      'col-1' 
+      'col-2'
+      'col-3' 
+      'col-4'
+    ;
+  }
+}
+
+/* Tablet (601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .summary {
+    flex-direction: column;
+    row-gap: 0.5em;
+  }
+
+  .sidebar {
+    width: 65px;
+    padding: 0;
+    align-items: center;
+  }
+
+  .sidebar-links {
+    margin: auto 0;
+  }
+
+  .link p,
+  .sidebar-logo {
+    display: none;
+  }
+
+  .content {
+    margin-left: 55px;
+  }
+
+  .chart {
+    margin-top: 0.5em;
+  }
+
+  /* another chart */
+  .another-chart {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "profit "
+      "revenue"
+      "order";
+    gap: 2em;
+  }
+
+  .chart-revenue,
+  .chart-profit,
+  .chart-order {
+    width: 85vw;
+  }
+}
+
+/* Desktop (901px and up) */
+@media (min-width: 901px) {
+  /* Styles for desktop devices */
+}
