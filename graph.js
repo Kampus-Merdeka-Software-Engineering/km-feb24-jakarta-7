@@ -27,6 +27,7 @@ const config = {
     data: data,
     options: {
         responsive: true,
+        maintainAspectRatio: true, // Menonaktifkan aspek rasio agar dapat menyesuaikan ukuran
         plugins: {
             legend: {
                 position: 'right',
