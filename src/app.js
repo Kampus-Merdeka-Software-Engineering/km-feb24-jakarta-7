@@ -51,7 +51,7 @@ sections.forEach(section => {
 document.addEventListener('DOMContentLoaded', function() {
   const container = document.getElementById('team-cards-container');
 
-  fetch("../../data/data_team.json") 
+  fetch("./data/data_team.json") 
       .then(response => {
           if (!response.ok) {
               throw new Error('Network response was not ok ' + response.statusText);

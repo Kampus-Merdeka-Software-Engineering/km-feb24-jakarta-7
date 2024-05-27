@@ -1,5 +1,5 @@
 // Fetch data dari file JSON
-fetch("../../data/profit_per_year.json")
+fetch("./data/profit_per_year.json")
   .then((response) => response.json())
   .then((data) => {
     let chartData = prepareChartData(data, "year");

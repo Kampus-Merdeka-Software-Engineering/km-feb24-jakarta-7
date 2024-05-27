@@ -1,5 +1,5 @@
 // Fetch data dari file JSON
-fetch("../../data/total_order_by_sub_category.json")
+fetch("./data/total_order_by_sub_category.json")
   .then((response) => response.json())
   .then((data) => {
     // Proses data dan buat line chart
