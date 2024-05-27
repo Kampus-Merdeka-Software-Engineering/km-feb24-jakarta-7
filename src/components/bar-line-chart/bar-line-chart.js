@@ -1,25 +1,27 @@
 // Fetch data dari file JSON
-fetch("../../data/total_revenue_per_product_category.json")
+fetch("../../data/total_order_by_sub_category.json")
   .then((response) => response.json())
   .then((data) => {
     // Proses data dan buat line chart
-    const labels = data.map((item) => item.Product_Category);
-    const revenues = data.map((item) => item.total_revenue);
+    const labels = data.map((item) => item.Sub_Category);
+    const order = data.map((item) => item.Total_Order);
+    const profit = data.map((item) => item.Total_Profit);
+
 
     // setup
     const chartData = {
       labels: labels,
       datasets: [
         {
-          label: "Total Revenue",
-          data: revenues,
+          label: "Total Order",
+          data: order,
           backgroundColor: "#B07CFF",
           tension: 0.1,
         },
         {
-          type: 'line',
-          label: "Total Order",
-          data: revenues,
+          type: "line",
+          label: "Total Profit",
+          data: profit,
           backgroundColor: "#B07CFF",
           tension: 0.1,
         },
@@ -55,6 +57,9 @@ fetch("../../data/total_revenue_per_product_category.json")
     };
 
     // init
-    const barLineChart = new Chart(document.getElementById("barLineChart"),chartConfig);
+    const barLineChart = new Chart(
+      document.getElementById("barLineChart"),
+      chartConfig
+    );
   })
   .catch((error) => console.error("Error fetching data:", error));

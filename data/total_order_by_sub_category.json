@@ -1,87 +1,87 @@
 [
   {
-    "Sub_Category": "Caps",
-    "jml_order": "67268",
-    "jml_profit": "77921"
-  },
-  {
-    "Sub_Category": "Cleaners",
-    "jml_order": "27574",
-    "jml_profit": "115891"
-  },
-  {
     "Sub_Category": "Tires and Tubes",
-    "jml_order": "514051",
-    "jml_profit": "2727713"
-  },
-  {
-    "Sub_Category": "Vests",
-    "jml_order": "14526",
-    "jml_profit": "518791"
-  },
-  {
-    "Sub_Category": "Socks",
-    "jml_order": "17678",
-    "jml_profit": "93171"
+    "Total_Order": "94544",
+    "Total_Profit": "453183"
   },
   {
     "Sub_Category": "Bottles and Cages",
-    "jml_order": "241726",
-    "jml_profit": "810598"
-  },
-  {
-    "Sub_Category": "Road Bikes",
-    "jml_order": "19771",
-    "jml_profit": "10078875"
-  },
-  {
-    "Sub_Category": "Bike Racks",
-    "jml_order": "4741",
-    "jml_profit": "304455"
-  },
-  {
-    "Sub_Category": "Bike Stands",
-    "jml_order": "2412",
-    "jml_profit": "201935"
-  },
-  {
-    "Sub_Category": "Fenders",
-    "jml_order": "62138",
-    "jml_profit": "748914"
-  },
-  {
-    "Sub_Category": "Gloves",
-    "jml_order": "39978",
-    "jml_profit": "511654"
+    "Total_Order": "48271",
+    "Total_Profit": "141930"
   },
   {
     "Sub_Category": "Helmets",
-    "jml_order": "181606",
-    "jml_profit": "3380203"
-  },
-  {
-    "Sub_Category": "Touring Bikes",
-    "jml_order": "4648",
-    "jml_profit": "2279938"
-  },
-  {
-    "Sub_Category": "Mountain Bikes",
-    "jml_order": "11992",
-    "jml_profit": "8160463"
-  },
-  {
-    "Sub_Category": "Hydration Packs",
-    "jml_order": "19914",
-    "jml_profit": "572668"
+    "Total_Order": "34943",
+    "Total_Profit": "570223"
   },
   {
     "Sub_Category": "Jerseys",
-    "jml_order": "88125",
-    "jml_profit": "603568"
+    "Total_Order": "18443",
+    "Total_Profit": "64459"
+  },
+  {
+    "Sub_Category": "Caps",
+    "Total_Order": "13334",
+    "Total_Profit": "7571"
+  },
+  {
+    "Sub_Category": "Fenders",
+    "Total_Order": "9737",
+    "Total_Profit": "101102"
+  },
+  {
+    "Sub_Category": "Gloves",
+    "Total_Order": "8089",
+    "Total_Profit": "90102"
+  },
+  {
+    "Sub_Category": "Cleaners",
+    "Total_Order": "6789",
+    "Total_Profit": "25249"
+  },
+  {
+    "Sub_Category": "Road Bikes",
+    "Total_Order": "6024",
+    "Total_Profit": "2590361"
+  },
+  {
+    "Sub_Category": "Hydration Packs",
+    "Total_Order": "5163",
+    "Total_Profit": "129065"
   },
   {
     "Sub_Category": "Shorts",
-    "jml_order": "27168",
-    "jml_profit": "1034342"
+    "Total_Order": "3901",
+    "Total_Profit": "127000"
+  },
+  {
+    "Sub_Category": "Socks",
+    "Total_Order": "3639",
+    "Total_Profit": "16630"
+  },
+  {
+    "Sub_Category": "Mountain Bikes",
+    "Total_Order": "3067",
+    "Total_Profit": "1851082"
+  },
+  {
+    "Sub_Category": "Vests",
+    "Total_Order": "2883",
+    "Total_Profit": "85397"
+  },
+  {
+    "Sub_Category": "Touring Bikes",
+    "Total_Order": "1020",
+    "Total_Profit": "370930"
+  },
+  {
+    "Sub_Category": "Bike Stands",
+    "Total_Order": "687",
+    "Total_Profit": "52167"
+  },
+  {
+    "Sub_Category": "Bike Racks",
+    "Total_Order": "637",
+    "Total_Profit": "34920"
   }
 ]
