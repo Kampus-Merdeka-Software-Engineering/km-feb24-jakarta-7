@@ -15,6 +15,31 @@ body {
   display: flex;
 }
 
+label, select {
+  font-size: 12px;
+}
+
+select:focus {
+  outline: none;
+}
+
+select {
+  color: #fff;
+  background: rgb(176, 124, 255);
+  background: linear-gradient(
+    140deg,
+    rgba(176, 124, 255, 1) 0%,
+    rgba(74, 125, 255, 1) 100%
+  );
+  border: none;
+  padding: 2px 4px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
 /* sidebar */
 .sidebar {
   display: flex;
@@ -151,7 +176,8 @@ header {
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "profit profit"
-    "revenue order";
+    "revenue order"
+    "sub-category total-product";
   gap: 1em;
 }
 
@@ -171,9 +197,28 @@ header {
   height: 300px;
 }
 
+.category-gender {
+  grid-area: sub-category;
+  width: 37vw;
+  height: 300px;
+}
+
+.total-product {
+  grid-area: total-product;
+  width: 37vw;
+  height: 300px;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .chart-revenue,
 .chart-profit,
-.chart-order {
+.chart-order,
+.category-gender,
+.total-product {
   margin: auto;
   background-color: #fff;
   padding: 1.5em;
@@ -188,7 +233,6 @@ header {
   -webkit-box-shadow: 0px 0px 34px -1px #454c5e14;
   -moz-box-shadow: 0px 0px 34px -1px rgba(0, 0, 0, 0.45);
 }
-
 /* about */
 
 #about {
@@ -371,14 +415,19 @@ a:link, a:visited, a:hover, a:active {
     grid-template-areas:
       "profit "
       "revenue"
-      "order";
+      "order"
+      "sub-category" 
+      "total-product";
     gap: 2em;
     padding-bottom: 20%;
   }
 
   .chart-revenue,
   .chart-profit,
-  .chart-order {
+  .chart-order,
+  .category-gender,
+  .total-product
+  {
     width: 90vw;
     /* height: 40vh; */
   }
@@ -435,13 +484,18 @@ a:link, a:visited, a:hover, a:active {
     grid-template-areas:
       "profit "
       "revenue"
-      "order";
+      "order"
+      "sub-category" 
+      "total-product";
     gap: 2em;
   }
 
   .chart-revenue,
   .chart-profit,
-  .chart-order {
+  .chart-order,
+  .category-gender, 
+  .total-product,
+  .total-product {
     width: 85vw;
   }
 }
