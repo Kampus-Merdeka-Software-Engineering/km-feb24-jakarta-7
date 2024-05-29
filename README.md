@@ -14,9 +14,7 @@ To use the dashboard, follow these steps:
 - Responsive design
 
 ## Screenshots
-![Desktop View](screenshot/laptop.png)
-![Tablet View](screenshot/tablet.png)
-![Mobile View](screenshot/mobile.png)
+![Desktop View](screenshot/desktop.png)
 
 ## Demo
 Check out the live demo [here](https://revou-team7-jakarta.netlify.app).
