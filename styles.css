@@ -82,6 +82,7 @@ select {
   margin-left: 200px;
   width: 100%;
   color: #454c5e;
+  padding-block: 2em;
 }
 
 .text-center {
