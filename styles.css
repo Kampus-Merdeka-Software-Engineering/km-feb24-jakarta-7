@@ -11,11 +11,17 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.jakarta {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: bolder;
+}
+
 .container {
   display: flex;
 }
 
-label, select {
+label,
+select {
   font-size: 12px;
 }
 
@@ -183,30 +189,20 @@ header {
 
 .chart-revenue {
   grid-area: revenue;
-  width: 37vw;
-  height: 300px;
 }
 .chart-profit {
   grid-area: profit;
-  width: 78vw;
-  height: 300px;
 }
 .chart-order {
   grid-area: order;
-  width: 37vw;
-  height: 300px;
 }
 
 .category-gender {
   grid-area: sub-category;
-  width: 37vw;
-  height: 300px;
 }
 
 .total-product {
   grid-area: total-product;
-  width: 37vw;
-  height: 300px;
 }
 
 canvas {
@@ -223,6 +219,9 @@ canvas {
   background-color: #fff;
   padding: 1.5em;
 
+  width: 100%;
+  height: 300px;
+
   border-radius: 1em;
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
@@ -237,7 +236,7 @@ canvas {
 
 #about {
   padding-block: 2.5em;
-  background-image: url('https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg');
+  background-image: url("https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -247,12 +246,21 @@ canvas {
   margin-top: 2em;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-    'col-1 col-2'
-    'col-3 col-4'
-  ;
-  gap: 3em;
+  grid-template-areas:
+    "col-1 col-2"
+    "col-3 col-4";
+  gap: 1em;
   padding: 20px;
+}
+
+.about-column {
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .col-1 {
@@ -260,7 +268,6 @@ canvas {
 }
 .col-2 {
   grid-area: col-2;
-  
 }
 .col-3 {
   grid-area: col-3;
@@ -268,7 +275,6 @@ canvas {
 .col-4 {
   grid-area: col-4;
 }
-
 
 /* team */
 
@@ -279,14 +285,15 @@ canvas {
   padding: 20px;
 }
 
-.team-header, .about-header {
+.team-header,
+.about-header {
   flex-direction: column;
   text-align: center;
 }
 
 .title {
   font-size: 2em;
-  background: linear-gradient(to right, #B07CFF, #4A7DEE);
+  background: linear-gradient(to right, #b07cff, #4a7dee);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -341,27 +348,39 @@ canvas {
   padding: 0 5px;
   display: inline-block;
   font-size: 1.2em;
-  color: white;
   background: rgba(255, 255, 255, 0.39);
   border-radius: 4px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.2px);
-  -webkit-backdrop-filter: blur(4.2px);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
+  box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.63);
+  -webkit-box-shadow: 1px 1px 1px -1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.63);
 }
 
-a:link, a:visited, a:hover, a:active {
+.card-social div:hover{
+ opacity: .5 ;
+ transition: opacity .5 ease;
+ -webkit-transition: opacity .5 ease;
+ -moz-transition: opacity .5 ease;
+ -ms-transition: opacity .5 ease;
+ -o-transition: opacity .5 ease;
+}
+
+.card-social div i {
+  background: linear-gradient(to right, #b07cff, #4a7dee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
   color: #454c5e;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .team-cards-container {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
-
 
 /* media */
 /* Extra small devices (phones, 600px and down) */
@@ -416,20 +435,10 @@ a:link, a:visited, a:hover, a:active {
       "profit "
       "revenue"
       "order"
-      "sub-category" 
+      "sub-category"
       "total-product";
     gap: 2em;
     padding-bottom: 20%;
-  }
-
-  .chart-revenue,
-  .chart-profit,
-  .chart-order,
-  .category-gender,
-  .total-product
-  {
-    width: 90vw;
-    /* height: 40vh; */
   }
 
   .team-cards-container {
@@ -439,12 +448,11 @@ a:link, a:visited, a:hover, a:active {
 
   .about-content {
     grid-template-columns: 1fr;
-    grid-template-areas: 
-      'col-1' 
-      'col-2'
-      'col-3' 
-      'col-4'
-    ;
+    grid-template-areas:
+      "col-1"
+      "col-2"
+      "col-3"
+      "col-4";
   }
 }
 
@@ -485,22 +493,8 @@ a:link, a:visited, a:hover, a:active {
       "profit "
       "revenue"
       "order"
-      "sub-category" 
+      "sub-category"
       "total-product";
-    gap: 2em;
+    gap: 1em;
   }
-
-  .chart-revenue,
-  .chart-profit,
-  .chart-order,
-  .category-gender, 
-  .total-product,
-  .total-product {
-    width: 85vw;
-  }
-}
-
-/* Desktop (901px and up) */
-@media (min-width: 901px) {
-  /* Styles for desktop devices */
 }

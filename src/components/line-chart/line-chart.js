@@ -9,6 +9,11 @@ fetch("./data/profit_per_year.json")
       type: "line",
       data: chartData,
       options: {
+        layout: {
+          padding: {
+            bottom : 10,
+          }
+      },
         maintainAspectRatio: false,
         scales: {
           y: {

@@ -1,3 +1,4 @@
+
 // Mendapatkan semua tautan dan bagian yang akan diamati
 const links = document.querySelectorAll('.link');
 const sections = document.querySelectorAll('article');
@@ -45,9 +46,39 @@ sections.forEach(section => {
 });
 
 
+/* COUNT animation */
+const counts = document.querySelectorAll('.count');
+const speed = 50;
+
+counts.forEach((counter) => {
+    function updateCount() {
+        const target = Number(counter.getAttribute('data-target'));
+        const count = Number(counter.innerText);
+        const inc = target / speed;
+        if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(updateCount, 15);
+        } else {
+            counter.innerText = formatNumber(target);
+        }
+    }
+
+    updateCount();
+});
+
+function formatNumber(number) {
+    if (number >= 1000000) {
+        return (number / 1000000).toFixed(1) + 'jt';
+    } else if (number >= 1000) {
+        return (number / 1000).toFixed(1) + 'rb';
+    } else {
+        return number.toLocaleString('en-US');
+    }
+}
 
 
 
+/* generate card element */
 document.addEventListener('DOMContentLoaded', function() {
   const container = document.getElementById('team-cards-container');
 
