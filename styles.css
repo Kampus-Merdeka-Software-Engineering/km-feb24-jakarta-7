@@ -356,13 +356,13 @@ canvas {
   -moz-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.63);
 }
 
-.card-social div:hover{
- opacity: .5 ;
- transition: opacity .5 ease;
- -webkit-transition: opacity .5 ease;
- -moz-transition: opacity .5 ease;
- -ms-transition: opacity .5 ease;
- -o-transition: opacity .5 ease;
+.card-social div:hover {
+  opacity: 0.5;
+  transition: opacity 0.5 ease;
+  -webkit-transition: opacity 0.5 ease;
+  -moz-transition: opacity 0.5 ease;
+  -ms-transition: opacity 0.5 ease;
+  -o-transition: opacity 0.5 ease;
 }
 
 .card-social div i {
@@ -381,6 +381,44 @@ a:active {
 
 .team-cards-container {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* data table */
+.container-data-table {
+  font-size: 12px;
+  background-color: white;
+  margin-top: 20px;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: rgba(69, 76, 94, 0.08) 0px 0px 34px -1px;
+}
+.data-tables-title {
+  margin: 5px auto;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  color: #0000008c;
+  font-weight: 600;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #c29ef659;
+}
+
+div.dt-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+thead {
+  background: rgb(176, 124, 255);
+  background: linear-gradient(
+    140deg,
+    rgba(176, 124, 255, 1) 0%,
+    rgba(74, 125, 255, 1) 100%
+  );
+  color: white;
 }
 
 /* media */
@@ -439,7 +477,6 @@ a:active {
       "sub-category"
       "total-product";
     gap: 2em;
-    padding-bottom: 20%;
   }
 
   .team-cards-container {
