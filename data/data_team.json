@@ -10,6 +10,36 @@
     }
   },
   {
+    "name": "Dhaniar Ayu Kinasi",
+    "position": "Pitch Deck",
+    "image": "https://i.ibb.co.com/9njvRpY/IMG-9918.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/dhaniarayuu",
+      "instagram": "https://www.instagram.com/dhaniarayuu/",
+      "twitter": "#"
+    }
+  },
+  {
+    "name": "Daffina Amalia A",
+    "position": "Quality Assurance",
+    "image": "https://i.ibb.co.com/hB0KL3X/Daffina.jpg",
+    "social": {
+      "linkedin": "#",
+      "instagram": "https://www.instagram.com/daffinaaaaz/",
+      "twitter": "#"
+    }
+  },
+  {
+    "name": "Mita Permatasari",
+    "position": "Front End Engineer",
+    "image": "https://i.ibb.co.com/1dpQ35D/1714999149390.jpg",
+    "social": {
+      "linkedin":"https://www.linkedin.com/in/mita-permatasari/",
+      "instagram": "https://www.instagram.com/prmitaaas.r/",
+      "twitter": "#"
+    }
+  },
+  {
     "name": "M Daffa Ariftama",
     "position": "Frontend Developer",
     "image": "https://i.ibb.co.com/LR4z2LQ/foto-daffa-bangkit.jpg",
@@ -20,32 +50,12 @@
     }
   },
   {
-    "name": "Anwar Usman",
-    "position": "Frontend Developer",
-    "image": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=626&ext=jpg&ga=GA1.1.495941185.1710226877&semt=sph",
+    "name": "Nuuruddunya Karunia",
+    "position": "Quality Assurance",
+    "image": "https://i.ibb.co.com/KXsVD4R/Whats-App-Image-2024-05-30-at-13-01-26-f101c314.jpg",
     "social": {
       "linkedin": "#",
-      "instagram": "https://www.instagram.com/daffaariftamaa/",
-      "twitter": "#"
-    }
-  },
-  {
-    "name": "Anwar Usman",
-    "position": "Frontend Developer",
-    "image": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=626&ext=jpg&ga=GA1.1.495941185.1710226877&semt=sph",
-    "social": {
-      "linkedin": "#",
-      "instagram": "https://www.instagram.com/daffaariftamaa/",
-      "twitter": "#"
-    }
-  },
-  {
-    "name": "Anwar Usman",
-    "position": "Frontend Developer",
-    "image": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=626&ext=jpg&ga=GA1.1.495941185.1710226877&semt=sph",
-    "social": {
-      "linkedin": "#",
-      "instagram": "https://www.instagram.com/daffaariftamaa/",
+      "instagram": "https://www.instagram.com/nuurudd_/",
       "twitter": "#"
     }
   },
