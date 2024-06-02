@@ -387,10 +387,14 @@ a:active {
 .container-data-table {
   font-size: 12px;
   background-color: white;
-  margin-top: 20px;
   padding: 2em;
+  margin-top: 20px;
   border-radius: 1em;
   box-shadow: rgba(69, 76, 94, 0.08) 0px 0px 34px -1px;
+}
+.container-active {
+  height: 700px;
+  padding: 2em;
 }
 .data-tables-title {
   margin: 5px auto;
