@@ -1,0 +1,172 @@
+[
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Tires and Tubes",
+  "total_order_quantity": "43370"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Bottles and Cages",
+  "total_order_quantity": "24435"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Helmets",
+  "total_order_quantity": "15264"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Jerseys",
+  "total_order_quantity": "8447"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Caps",
+  "total_order_quantity": "7658"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Fenders",
+  "total_order_quantity": "4984"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Gloves",
+  "total_order_quantity": "3586"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Road Bikes",
+  "total_order_quantity": "2894"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Cleaners",
+  "total_order_quantity": "2847"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Hydration Packs",
+  "total_order_quantity": "2500"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Socks",
+  "total_order_quantity": "2073"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Shorts",
+  "total_order_quantity": "1844"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Mountain Bikes",
+  "total_order_quantity": "1581"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Vests",
+  "total_order_quantity": "1253"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Touring Bikes",
+  "total_order_quantity": "495"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Bike Stands",
+  "total_order_quantity": "295"
+}, 
+{
+  "Customer_Gender": "Female",
+  "Sub_Category": "Bike Racks",
+  "total_order_quantity": "212"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Tires and Tubes",
+  "total_order_quantity": "51174"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Bottles and Cages",
+  "total_order_quantity": "23836"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Helmets",
+  "total_order_quantity": "19679"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Jerseys",
+  "total_order_quantity": "9996"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Caps",
+  "total_order_quantity": "5676"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Fenders",
+  "total_order_quantity": "4753"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Gloves",
+  "total_order_quantity": "4503"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Cleaners",
+  "total_order_quantity": "3942"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Road Bikes",
+  "total_order_quantity": "3130"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Hydration Packs",
+  "total_order_quantity": "2663"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Shorts",
+  "total_order_quantity": "2057"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Vests",
+  "total_order_quantity": "1630"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Socks",
+  "total_order_quantity": "1566"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Mountain Bikes",
+  "total_order_quantity": "1486"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Touring Bikes",
+  "total_order_quantity": "525"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Bike Racks",
+  "total_order_quantity": "425"
+}, 
+{
+  "Customer_Gender": "Male",
+  "Sub_Category": "Bike Stands",
+  "total_order_quantity": "392"
+}
+]
