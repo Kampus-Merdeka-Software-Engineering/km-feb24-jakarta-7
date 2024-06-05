@@ -1,11 +1,31 @@
 [
   {
+    "name": "Aisha Shakila Iedwan",
+    "position": "Project Manager",
+    "image": "https://i.ibb.co.com/YTJrWHp/Whats-App-Image-2024-06-01-at-13-34-07-9b52beb8.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/aisha-shakila-iedwan-053712283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      "instagram": "https://www.instagram.com/aishaakilaa?igsh=aGtvZTE4OGNkY2Nk",
+      "twitter": "#"
+    }
+  },
+  {
     "name": "Nur Inayah Al-'Azhimah",
     "position": "Pitch Deck",
     "image": "https://i.ibb.co.com/9g7cpyv/Nur-Inayah-Al-Azhimah.jpg",
     "social": {
       "linkedin": "https://www.linkedin.com/in/nur-inayah-al-azhimah-33b772298/",
       "instagram": "https://www.instagram.com/nurinayahalazh/",
+      "twitter": "#"
+    }
+  },
+  {
+    "name": "Zaidan Yoga Pangestu",
+    "position": "Pitch Deck",
+    "image": "https://i.ibb.co.com/WpnvyF8/Whats-App-Image-2024-06-04-at-8-45-45-PM.jpg",
+    "social": {
+      "linkedin": "#",
+      "instagram": "https://www.instagram.com/zaidan_yoga/",
       "twitter": "#"
     }
   },
@@ -20,12 +40,12 @@
     }
   },
   {
-    "name": "Daffina Amalia A",
-    "position": "Quality Assurance",
-    "image": "https://i.ibb.co.com/hB0KL3X/Daffina.jpg",
+    "name": "Mita Permatasari",
+    "position": "Frontend Developer",
+    "image": "https://i.ibb.co.com/1dpQ35D/1714999149390.jpg",
     "social": {
-      "linkedin": "#",
-      "instagram": "https://www.instagram.com/daffinaaaaz/",
+      "linkedin": "https://www.linkedin.com/in/mita-permatasari/",
+      "instagram": "https://www.instagram.com/prmitaaas.r/",
       "twitter": "#"
     }
   },
@@ -40,72 +60,52 @@
     }
   },
   {
-    "name": "Anwar Usman",
-    "position": "Frontend Developer",
-    "image": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=626&ext=jpg&ga=GA1.1.495941185.1710226877&semt=sph",
+    "name": "Daffina Amalia A",
+    "position": "Quality Assurance",
+    "image": "https://i.ibb.co.com/hB0KL3X/Daffina.jpg",
     "social": {
       "linkedin": "#",
-      "instagram": "https://www.instagram.com/daffaariftamaa/",
+      "instagram": "https://www.instagram.com/daffinaaaaz/",
       "twitter": "#"
     }
   },
   {
-    "name": "Anwar Usman",
-    "position": "Frontend Developer",
-    "image": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=626&ext=jpg&ga=GA1.1.495941185.1710226877&semt=sph",
+    "name": "Nuuruddunya Karunia",
+    "position": "Quality Assurance",
+    "image": "https://i.ibb.co.com/KXsVD4R/Whats-App-Image-2024-05-30-at-13-01-26-f101c314.jpg",
     "social": {
       "linkedin": "#",
-      "instagram": "https://www.instagram.com/daffaariftamaa/",
+      "instagram": "https://www.instagram.com/nuurudd_/",
       "twitter": "#"
     }
   },
   {
-    "name": "Anwar Usman",
-    "position": "Frontend Developer",
-    "image": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=626&ext=jpg&ga=GA1.1.495941185.1710226877&semt=sph",
+    "name": "Adinda Kirana Murni S",
+    "position": "Quality Assurance",
+    "image": "https://i.ibb.co.com/WK0PJBz/20240522-171643.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/adindakmsiregar",
+      "instagram": "https://www.instagram.com/adindakms_/",
+      "twitter": "https://x.com/adindasiregars?t=LNd0FhoJhrBWUx-ei5ReQQ&s=09"
+    }
+  },
+  {
+    "name": "Mhd. Hafizul Halim L",
+    "position": "Deployment Team",
+    "image": "https://i.ibb.co.com/bXz59CP/Whats-App-Image-2024-05-31-at-21-23-48-fa7b7e35.jpg",
     "social": {
       "linkedin": "#",
-      "instagram": "https://www.instagram.com/daffaariftamaa/",
+      "instagram": "https://www.instagram.com/hafizlhlm?igsh=eDluZGJzcmo5dDRj",
       "twitter": "#"
     }
   },
   {
-    "name": "Anwar Usman",
-    "position": "Frontend Developer",
-    "image": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=626&ext=jpg&ga=GA1.1.495941185.1710226877&semt=sph",
+    "name": "Reyhan Akbar B",
+    "position": "Deployment Team",
+    "image": "https://i.ibb.co.com/z4tzLKp/DSC00021-test.jpg",
     "social": {
       "linkedin": "#",
-      "instagram": "https://www.instagram.com/daffaariftamaa/",
-      "twitter": "#"
-    }
-  },
-  {
-    "name": "Anwar Usman",
-    "position": "Frontend Developer",
-    "image": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=626&ext=jpg&ga=GA1.1.495941185.1710226877&semt=sph",
-    "social": {
-      "linkedin": "#",
-      "instagram": "https://www.instagram.com/daffaariftamaa/",
-      "twitter": "#"
-    }
-  },
-  {
-    "name": "Anwar Usman",
-    "position": "Frontend Developer",
-    "image": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=626&ext=jpg&ga=GA1.1.495941185.1710226877&semt=sph",
-    "social": {
-      "linkedin": "#",
-      "instagram": "https://www.instagram.com/daffaariftamaa/",
-      "twitter": "#"
-    }
-  },
-  {
-    "name": "Anwar Usman",
-    "position": "Frontend Developer",
-    "image": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=626&ext=jpg&ga=GA1.1.495941185.1710226877&semt=sph",
-    "social": {
-      "linkedin": "#",
-      "instagram": "https://www.instagram.com/daffaariftamaa/",
+      "instagram": "https://www.instagram.com/dyl__star/",
       "twitter": "#"
     }
   }

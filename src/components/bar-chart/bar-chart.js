@@ -1,28 +1,77 @@
-// Fetch data dari file JSON
-fetch("./data/total_revenue_per_product_category.json")
+let revenueChart;
+
+yearOption.addEventListener("change", updateRevenueChart);
+
+// Function to process JSON data for revenue chart
+function processDataForRevenue(data, yearFilter) {
+  const revenueDataFiltered = {};
+  const allCategories = [...new Set(data.map(item => item.Product_Category))]; // Get all unique product categories
+
+  if (yearFilter === "all") {
+    data.reduce((acc, curr) => {
+      if (!acc[curr.Product_Category]) {
+        acc[curr.Product_Category] = 0;
+      }
+      acc[curr.Product_Category] += curr.Revenue;
+      return acc;
+    }, revenueDataFiltered);
+  } else {
+    data
+      .filter((item) => item.Year == yearFilter)
+      .reduce((acc, curr) => {
+        if (!acc[curr.Product_Category]) {
+          acc[curr.Product_Category] = 0;
+        }
+        acc[curr.Product_Category] += curr.Revenue;
+        return acc;
+      }, revenueDataFiltered);
+
+    // Ensure all categories are present in the filtered data with 0 value if missing
+    allCategories.forEach(category => {
+      if (!revenueDataFiltered[category]) {
+        revenueDataFiltered[category] = 0;
+      }
+    });
+  }
+
+  return revenueDataFiltered;
+}
+
+// Function to update revenue chart
+function updateRevenueChart() {
+  const yearSelected = yearOption.value;
+  const dataRevenueFiltered = processDataForRevenue(rawData, yearSelected);
+
+  // Update revenue chart with new data
+  revenueChart.data.labels = Object.keys(dataRevenueFiltered);
+  revenueChart.data.datasets[0].data = Object.values(dataRevenueFiltered);
+  revenueChart.update(); // Update the chart with new data
+}
+
+// Fetch or load your JSON data here
+fetch("../../../data/data.json") // Replace with your data loading method
   .then((response) => response.json())
   .then((data) => {
-    // Proses data dan buat line chart
-    const labels = data.map((item) => item.Product_Category);
-    const revenues = data.map((item) => item.total_revenue);
+    rawData = data;
+    const initialData = processDataForRevenue(data, "all");
 
-    // setup
-    const chartData = {
-      labels: labels,
-      datasets: [
-        {
-          label: "Total Revenue",
-          data: revenues,
-          backgroundColor: "#B07CFF",
-          tension: 0.1,
-        },
-      ],
-    };
+    const ctx = document.getElementById("barChart").getContext("2d");
+    const labels = Object.keys(initialData);
+    const revenueValues = Object.values(initialData);
 
-    // config
-    const chartConfig = {
+    revenueChart = new Chart(ctx, {
       type: "bar",
-      data: chartData,
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: "Revenue",
+            data: revenueValues,
+            backgroundColor: "#B07CFF",
+            tension: 0.1,
+          },
+        ],
+      },
       options: {
         maintainAspectRatio: false,
         indexAxis: "y",
@@ -46,9 +95,5 @@ fetch("./data/total_revenue_per_product_category.json")
           },
         },
       },
-    };
-
-    // init
-    const barChart = new Chart(document.getElementById("barChart"),chartConfig);
-  })
-  .catch((error) => console.error("Error fetching data:", error));
+    });
+  });

@@ -85,6 +85,20 @@
             </div>
           </header>
 
+          <div class="container-filter">
+            <!-- year filter -->
+            <label for="year">Year</label>
+            <select name="year" id="year">
+              <option value="all" selected>all</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+            </select>
+          </div>
+
           <div class="chart">
             <div class="summary">
               <div class="total order">
@@ -103,13 +117,6 @@
 
             <div class="another-chart">
               <div class="chart-profit">
-                <div class="sort-options">
-                  <label for="sortBy">Sort by:</label>
-                  <select id="sortBy">
-                    <option value="year">Year</option>
-                    <option value="profit">Profit</option>
-                  </select>
-                </div>
                 <canvas id="lineChart"></canvas>
               </div>
               <div class="chart-revenue">
@@ -158,117 +165,50 @@
 
         <article id="about">
           <header class="about-header">
-            <h1 class="title">About Capstone</h1>
+            <h1 class="title">About the Capstone Project</h1>
             <p class="subtitle">
-              Our Expert team is made up of creatives with technical know-how,
+              This capstone project focuses on addressing the decline in bicycle
+              sales in Australia
               <br />
-              strategists who think outside the box, and developers who push
-              innovation.
+              by analyzing existing data to enhance annual sales in the region.
             </p>
           </header>
           <div class="about-content">
             <div class="about-column col-1">
               <h4>Business Understanding</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur, illum quae! Animi excepturi fugit repellendus a
-                nihil, commodi voluptate quibusdam.
-              </p>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-                repellendus vitae veritatis enim debitis nostrum, quas rerum
-                numquam nesciunt totam illo laboriosam velit, unde quam autem
-                ipsam sed odio sunt eius blanditiis. Explicabo asperiores odit
-                sed quam facere, dignissimos nihil voluptatibus, tempore
-                veritatis modi earum numquam dolorum id voluptas minus?
-              </p>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-                repellendus vitae veritatis enim debitis nostrum, quas rerum
-                numquam nesciunt totam illo laboriosam velit, unde quam autem
-                ipsam sed odio sunt eius blanditiis. Explicabo asperiores odit
-                sed quam facere, dignissimos nihil voluptatibus, tempore
-                veritatis modi earum numquam dolorum id voluptas minus?
+                We are concentrating our analysis on Australia, which has
+                experienced a significant decline in bicycle sales. This
+                indicates an opportunity to boost sales in the country. Our
+                primary goal is to identify effective strategies to increase
+                bicycle sales in Australia by 5% annually.
               </p>
             </div>
             <div class="about-column col-2">
               <h4>Background</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur, illum quae! Animi excepturi fugit repellendus a
-                nihil, commodi voluptate quibusdam.
-              </p>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-                repellendus vitae veritatis enim debitis nostrum, quas rerum
-                numquam nesciunt totam illo laboriosam velit, unde quam autem
-                ipsam sed odio sunt eius blanditiis. Explicabo asperiores odit
-                sed quam facere, dignissimos nihil voluptatibus, tempore
-                veritatis modi earum numquam dolorum id voluptas minus?
-              </p>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-                repellendus vitae veritatis enim debitis nostrum, quas rerum
-                numquam nesciunt totam illo laboriosam velit, unde quam autem
-                ipsam sed odio sunt eius blanditiis. Explicabo asperiores odit
-                sed quam facere, dignissimos nihil voluptatibus, tempore
-                veritatis modi earum numquam dolorum id voluptas minus?
+                The "Bike Sales Europe" dataset contains detailed data on
+                bicycle sales across Europe. This data is used to analyze
+                monthly and yearly sales trends in Europe. From our analysis, we
+                observed that bicycle sales in Australia have significantly
+                declined compared to other European countries.
               </p>
             </div>
             <div class="about-column col-3">
               <h4>Problem Statement</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur, illum quae! Animi excepturi fugit repellendus a
-                nihil, commodi voluptate quibusdam.
-              </p>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-                repellendus vitae veritatis enim debitis nostrum, quas rerum
-                numquam nesciunt totam illo laboriosam velit, unde quam autem
-                ipsam sed odio sunt eius blanditiis. Explicabo asperiores odit
-                sed quam facere, dignissimos nihil voluptatibus, tempore
-                veritatis modi earum numquam dolorum id voluptas minus?
-              </p>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-                repellendus vitae veritatis enim debitis nostrum, quas rerum
-                numquam nesciunt totam illo laboriosam velit, unde quam autem
-                ipsam sed odio sunt eius blanditiis. Explicabo asperiores odit
-                sed quam facere, dignissimos nihil voluptatibus, tempore
-                veritatis modi earum numquam dolorum id voluptas minus?
+                How can we increase bicycle sales in Australia by 5% per year?
               </p>
             </div>
             <div class="about-column col-4">
               <h4>Objective</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur, illum quae! Animi excepturi fugit repellendus a
-                nihil, commodi voluptate quibusdam.
-              </p>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-                repellendus vitae veritatis enim debitis nostrum, quas rerum
-                numquam nesciunt totam illo laboriosam velit, unde quam autem
-                ipsam sed odio sunt eius blanditiis. Explicabo asperiores odit
-                sed quam facere, dignissimos nihil voluptatibus, tempore
-                veritatis modi earum numquam dolorum id voluptas minus?
-              </p>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-                repellendus vitae veritatis enim debitis nostrum, quas rerum
-                numquam nesciunt totam illo laboriosam velit, unde quam autem
-                ipsam sed odio sunt eius blanditiis. Explicabo asperiores odit
-                sed quam facere, dignissimos nihil voluptatibus, tempore
-                veritatis modi earum numquam dolorum id voluptas minus?
+                The goal of this project is to boost bicycle sales in Australia
+                by 5% each year. This project involves in-depth market analysis,
+                identification of consumer preferences, and visualization of
+                sales trends tailored to the Australian market. The expected
+                outcome is a significant increase in market share and revenue
+                from bicycle sales in Australia.
               </p>
             </div>
           </div>
@@ -291,8 +231,8 @@
 
     <script src="./src/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="./src/components/bar-chart/bar-chart.js"></script>
     <script src="./src/components/line-chart/line-chart.js"></script>
+    <script src="./src/components/bar-chart/bar-chart.js"></script>
     <script src="./src/components/bar-line-chart/bar-line-chart.js"></script>
     <script src="./src/components/double-bar-chart/double-bar-chart.js"></script>
     <script src="./src/components/pie-chart/pie-chart.js"></script>

@@ -1,72 +1,101 @@
-// Fetch data dari file JSON
-fetch("./data/profit_per_year.json")
-  .then((response) => response.json())
-  .then((data) => {
-    let chartData = prepareChartData(data, "year");
+let profitChart;
+const yearOption = document.getElementById("year");
+yearOption.addEventListener("change", updateProfitChart);
 
-    // setup
-    const lineChart = new Chart(document.getElementById("lineChart"), {
-      type: "line",
-      data: chartData,
-      options: {
-        layout: {
-          padding: {
-            bottom : 10,
-          }
-      },
-        maintainAspectRatio: false,
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-        plugins: {
-          title: {
-            display: true,
-            text: "Profit Growth by Year",
-          },
-        },
-      },
-    });
+// Function to process JSON data for profit chart
+function processDataForProfit(data, yearFilter) {
+    const profitDataFiltered = {};
+    const monthOrder = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    // Event listener untuk dropdown sort
-    document.getElementById("sortBy").addEventListener("change", (event) => {
-      const sortBy = event.target.value;
-      chartData = prepareChartData(data, sortBy);
-      updateChart(lineChart, chartData);
-    });
-  })
-  .catch((error) => console.error("Error fetching data:", error));
+    if (yearFilter === "all") {
+        data.reduce((acc, curr) => {
+            if (!acc[curr.Year]) {
+                acc[curr.Year] = 0;
+            }
+            acc[curr.Year] += curr.Profit;
+            return acc;
+        }, profitDataFiltered);
+    } else {
+        data
+            .filter((item) => item.Year == yearFilter)
+            .reduce((acc, curr) => {
+                if (!acc[curr.Month]) {
+                    acc[curr.Month] = 0;
+                }
+                acc[curr.Month] += curr.Profit;
+                return acc;
+            }, profitDataFiltered);
 
-// Fungsi untuk mempersiapkan data chart berdasarkan metode sort
-function prepareChartData(data, sortBy) {
-  if (sortBy === "profit") {
-    data.sort((a, b) => a.jumlah_profit - b.jumlah_profit);
-    console.log('data', data)
-  } else {
-    data.sort((a, b) => a.Year - b.Year);
-    console.log('data', data)
-  }
+        // Ensure all months are present in the filtered data with 0 value if missing
+        monthOrder.forEach((month) => {
+            if (!profitDataFiltered[month]) {
+                profitDataFiltered[month] = 0;
+            }
+        });
 
-  const years = data.map((item) => item.Year);
-  const profits = data.map((item) => item.jumlah_profit);
+        // Sort data by month order
+        const sortedProfitDataFiltered = {};
+        monthOrder.forEach((month) => {
+            if (profitDataFiltered[month] !== undefined) {
+                sortedProfitDataFiltered[month] = profitDataFiltered[month];
+            }
+        });
 
-  return {
-    labels: years,
-    datasets: [
-      {
-        label: "Total Profit",
-        data: profits,
-        borderColor: "#B07CFF",
-        backgroundColor: "#B07CFF",
-        tension: 0.1,
-      },
-    ],
-  };
+        return sortedProfitDataFiltered;
+    }
+
+    return profitDataFiltered;
 }
 
-// Fungsi untuk mengupdate chart
-function updateChart(chart, newData) {
-  chart.data = newData;
-  chart.update();
+// Function to update profit chart
+function updateProfitChart() {
+    const yearSelected = yearOption.value;
+    const dataProfitFiltered = processDataForProfit(rawData, yearSelected);
+
+    // Update profit chart with new data
+    profitChart.data.labels = Object.keys(dataProfitFiltered);
+    profitChart.data.datasets[0].data = Object.values(dataProfitFiltered);
+    profitChart.update(); // Update the chart with new data
 }
+
+// Fetch or load your JSON data here
+fetch("../../../data/data.json") // Replace with your data loading method
+    .then((response) => response.json())
+    .then((data) => {
+        rawData = data;
+        const initialData = processDataForProfit(data, "all");
+
+        const ctx = document.getElementById("lineChart").getContext("2d");
+        const labels = Object.keys(initialData);
+        const profitValues = Object.values(initialData);
+
+        profitChart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: "Profit",
+                        data: profitValues,
+                        borderColor: "#B07CFF",
+                        backgroundColor: "#B07CFF",
+                        tension: 0.1,
+                    },
+                ],
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Profit Growth by Year",
+                    },
+                },
+            },
+        });
+    });

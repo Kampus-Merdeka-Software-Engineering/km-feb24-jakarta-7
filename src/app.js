@@ -1,3 +1,5 @@
+window.alert('belum kelar ygy :(')
+
 
 // Mendapatkan semua tautan dan bagian yang akan diamati
 const links = document.querySelectorAll('.link');
