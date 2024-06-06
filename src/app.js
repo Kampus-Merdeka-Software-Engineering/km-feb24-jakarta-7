@@ -81,6 +81,23 @@ function formatNumber(number) {
 
 /* generate card element */
 document.addEventListener("DOMContentLoaded", function () {
+  const body = document.body;
+  
+  function checkMobileMode() {
+    if (window.innerWidth <= 768) {
+      body.classList.add("mobile-mode");
+    } else {
+      body.classList.remove("mobile-mode");
+    }
+  }
+
+  // Periksa mode saat halaman dimuat
+  checkMobileMode();
+  
+  // Periksa mode saat ukuran jendela diubah
+  window.addEventListener("resize", checkMobileMode);
+  
+  // Bagian fetch data dan pembuatan elemen kartu
   const container = document.getElementById("team-cards-container");
 
   fetch("./data/data_team.json")
@@ -103,7 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
         cardContent.classList.add("card-content");
 
         const name = document.createElement("h4");
-        name.textContent = member.name;
+        // Potong nama hanya jika dalam mode mobile
+        const isMobile = body.classList.contains("mobile-mode");
+        name.textContent = isMobile && member.name.length > 18 ? member.name.slice(0, 15) + "..." : member.name;
 
         const position = document.createElement("p");
         position.textContent = member.position;
