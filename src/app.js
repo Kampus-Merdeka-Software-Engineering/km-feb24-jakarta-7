@@ -1,3 +1,4 @@
+// SIDEBAR OBSERVER
 // Mendapatkan semua tautan dan bagian yang akan diamati
 const links = document.querySelectorAll(".link");
 const sections = document.querySelectorAll("article");
@@ -13,6 +14,26 @@ function setActiveLink(id) {
   });
 }
 
+// Konfigurasi IntersectionObserver
+const observerOptions = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.1 // 50% dari artikel harus terlihat
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      setActiveLink(entry.target.id);
+    }
+  });
+}, observerOptions);
+
+// Amati setiap artikel
+sections.forEach(section => {
+  observer.observe(section);
+});
+
 // Event listener untuk tautan
 links.forEach((link) => {
   link.addEventListener("click", function (event) {
@@ -26,25 +47,6 @@ links.forEach((link) => {
     // Set tautan aktif
     setActiveLink(targetId);
   });
-});
-
-// Membuat observer
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setActiveLink(entry.target.id);
-      }
-    });
-  },
-  {
-    threshold: 0.5, // Memastikan 50% bagian terlihat sebelum dianggap berada di tampilan
-  }
-);
-
-// Mengamati setiap bagian
-sections.forEach((section) => {
-  observer.observe(section);
 });
 
 /* COUNT animation */

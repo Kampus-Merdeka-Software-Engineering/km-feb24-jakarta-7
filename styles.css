@@ -22,7 +22,7 @@ body {
 
 label,
 select {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 select:focus {
@@ -30,20 +30,11 @@ select:focus {
 }
 
 select {
-  color: #fff;
-  background: rgb(176, 124, 255);
-  background: linear-gradient(
-    140deg,
-    rgba(176, 124, 255, 1) 0%,
-    rgba(74, 125, 255, 1) 100%
-  );
-  border: none;
+  background: linear-gradient(to right, rgb(176, 124, 255), rgb(74, 125, 238)) text;
+  -webkit-text-fill-color: transparent;
+  box-shadow: rgba(0,0,0,.5) 1px 2px 0px 0px;
   padding: 2px 4px;
   border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
 }
 
 /* sidebar */
