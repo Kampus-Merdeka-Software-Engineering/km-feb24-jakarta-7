@@ -1,23 +1,86 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-  const data = [114898, 65668, 56958, 15619, 8028];
-  const total = data.reduce((acc, value) => acc + value, 0);
-  const dataInPercent = data.map(value => ((value / total) * 100).toFixed(2));
+let salesData;
+let pieChart;
 
+document.addEventListener("DOMContentLoaded", function () {
+  const yearDropdown = document.getElementById("year");
+  yearDropdown.addEventListener("change", updatePieChart);
+
+  fetchSalesData();
+});
+
+function fetchSalesData() {
+  fetch("../../../data/data.json")
+    .then((response) => response.json())
+    .then((data) => {
+      salesData = data;
+      updatePieChart();
+    })
+    .catch((error) => {
+      console.error("Error fetching sales data:", error);
+    });
+}
+
+function updatePieChart() {
+  const selectedYear = yearDropdown.value;
+  const filteredProfitData = processData(salesData, selectedYear);
+
+  if (!pieChart) {
+    createPieChart(filteredProfitData);
+  } else {
+    updateChartData(filteredProfitData);
+  }
+}
+
+function processData(data, yearFilter) {
+  const totalOrderQuantity = data.reduce((total, item) => {
+    if (yearFilter === "all" || item.Year == yearFilter) {
+      return total + item.Order_Quantity;
+    } else {
+      return total;
+    }
+  }, 0);
+
+  const profitDataFiltered = {};
+
+  if (yearFilter === "all") {
+    data.forEach((item) => {
+      if (!profitDataFiltered[item.State]) {
+        profitDataFiltered[item.State] = 0;
+      }
+      profitDataFiltered[item.State] += item.Order_Quantity;
+    });
+  } else {
+    data
+      .filter((item) => item.Year == yearFilter)
+      .forEach((item) => {
+        if (!profitDataFiltered[item.State]) {
+          profitDataFiltered[item.State] = 0;
+        }
+        profitDataFiltered[item.State] += item.Order_Quantity;
+      });
+  }
+
+  // Calculate percentages
+  for (const state in profitDataFiltered) {
+    profitDataFiltered[state] = (profitDataFiltered[state] / totalOrderQuantity) * 100;
+  }
+
+  return profitDataFiltered;
+}
+
+function createPieChart(data) {
   const ctx = document.getElementById("pieChart").getContext("2d");
-  const pieChart = new Chart(ctx, {
+  const labels = Object.keys(data);
+  const profitValues = Object.values(data);
+
+  pieChart = new Chart(ctx, {
     type: "pie",
     data: {
-      labels: [
-        "New South Wales",
-        "Victoria",
-        "Queensland",
-        "South Australia",
-        "Tasmania",
-      ],
+      labels: labels,
       datasets: [
         {
-          label: "Total Products",
-          data: dataInPercent,
+          label: "Order Quantity (%)",
+          data: profitValues,
           backgroundColor: [
             "#b07cff",
             "#8d63cc",
@@ -25,6 +88,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             "#c8a3ff",
             "#dfcbff",
           ],
+          borderWidth: 1,
         },
       ],
     },
@@ -40,16 +104,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
         },
         title: {
           display: true,
-          text: "Order Quantity by State",
+          text: "Order Quantity by State (%)",
         },
         tooltip: {
           callbacks: {
             label: function (tooltipItem) {
-              return tooltipItem.label + ": " + tooltipItem.raw + "%";
+              const percentage = parseFloat(tooltipItem.raw);
+              return tooltipItem.label + ": " + Math.round(percentage) + "%";
             },
           },
         },
       },
     },
   });
-});
+}
+
+
+function updateChartData(data) {
+  pieChart.data.labels = Object.keys(data);
+  pieChart.data.datasets[0].data = Object.values(data);
+  pieChart.update();
+}

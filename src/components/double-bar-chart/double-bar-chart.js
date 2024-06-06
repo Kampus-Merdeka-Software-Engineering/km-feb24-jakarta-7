@@ -1,99 +1,145 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-  const labels = [
-    "Tires and Tubes",
-    "Road Bikes",
-    "Bottles and Cages",
-    "Helmets",
-    "Mountain Bikes",
-    "Jerseys",
-    "Caps",
-    "Touring Bikes",
-    "Fenders",
-    "Gloves",
-    "Cleaners",
-    "Hydration Packs",
-    "Shorts",
-    "Socks",
-    "Vests",
-    "Bike Stands",
-    "Bike Racks",
-  ];
+let revenueByGenderChart;
+const yearDropdown = document.getElementById("year");
+yearDropdown.addEventListener("change", updateRevenueByGenderChart);
 
-  const maleData = [3266, 2071, 1531, 1270, 1045, 682, 376, 400, 302, 307, 0, 0, 0, 0, 0, 0, 0];
-  const femaleData = [2898, 1883, 1550, 1055, 1062, 581, 467, 379, 326, 270, 0, 0, 0, 0, 0, 0, 0];
+// Function to process JSON data for revenue chart by gender
+function processRevenueDataByGender(data, yearFilter) {
+  const totalRevenueByGender = {
+    Female: {},
+    Male: {}
+  };
 
-  // Filter data yang memiliki nilai dan gabungkan yang tidak menjadi "Other"
-  let filteredLabels = [];
-  let filteredMaleData = [];
-  let filteredFemaleData = [];
-  let otherMale = 0;
-  let otherFemale = 0;
-
-  labels.forEach((label, index) => {
-    if (maleData[index] !== 0 || femaleData[index] !== 0) {
-      filteredLabels.push(label);
-      filteredMaleData.push(maleData[index]);
-      filteredFemaleData.push(femaleData[index]);
-    } else {
-      otherMale += maleData[index];
-      otherFemale += femaleData[index];
+  data.forEach((item) => {
+    if (yearFilter === "all" || item.Year == yearFilter) {
+      const gender = item.Customer_Gender;
+      if (!totalRevenueByGender[gender][item.Sub_Category]) {
+        totalRevenueByGender[gender][item.Sub_Category] = 0;
+      }
+      totalRevenueByGender[gender][item.Sub_Category] += item.Revenue;
     }
   });
 
-  filteredLabels.push("Other");
-  filteredMaleData.push(otherMale);
-  filteredFemaleData.push(otherFemale);
+  // Calculate total revenue per sub category
+  const totalRevenuePerSubCategory = {};
+  Object.keys(totalRevenueByGender.Female).forEach((subCategory) => {
+    totalRevenuePerSubCategory[subCategory] =
+      (totalRevenueByGender.Female[subCategory] || 0) +
+      (totalRevenueByGender.Male[subCategory] || 0);
+  });
 
-  // Setup chart data
-  const chartData = {
-    labels: filteredLabels,
-    datasets: [
-      {
-        label: "Male",
-        data: filteredMaleData,
-        backgroundColor: "#b07cff",
-        borderWidth: 1,
-      },
-      {
-        label: "Female",
-        data: filteredFemaleData,
-        backgroundColor: "#6b7dff",
-        borderWidth: 1,
-      },
-    ],
+  // Sort sub categories by total revenue and get top 10
+  const sortedSubCategories = Object.keys(totalRevenuePerSubCategory).sort(
+    (a, b) => totalRevenuePerSubCategory[b] - totalRevenuePerSubCategory[a]
+  );
+  const topSubCategories = sortedSubCategories.slice(0, 10);
+
+  // Combine other sub categories into "Other"
+  const finalRevenueByGender = {
+    Female: { Other: 0 },
+    Male: { Other: 0 }
   };
+  topSubCategories.forEach((subCategory) => {
+    finalRevenueByGender.Female[subCategory] =
+      totalRevenueByGender.Female[subCategory] || 0;
+    finalRevenueByGender.Male[subCategory] =
+      totalRevenueByGender.Male[subCategory] || 0;
+  });
 
-  // Config chart
-  const chartConfig = {
-    type: "bar",
-    data: chartData,
-    options: {
-      maintainAspectRatio: false,
-      indexAxis: "x",
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
+  sortedSubCategories.slice(10).forEach((subCategory) => {
+    finalRevenueByGender.Female.Other +=
+      totalRevenueByGender.Female[subCategory] || 0;
+    finalRevenueByGender.Male.Other +=
+      totalRevenueByGender.Male[subCategory] || 0;
+  });
+
+  // Ensure "Other" is at the end
+  const sortedFinalRevenueByGender = {
+    Female: {},
+    Male: {}
+  };
+  topSubCategories.forEach((subCategory) => {
+    sortedFinalRevenueByGender.Female[subCategory] = finalRevenueByGender.Female[subCategory];
+    sortedFinalRevenueByGender.Male[subCategory] = finalRevenueByGender.Male[subCategory];
+  });
+  sortedFinalRevenueByGender.Female.Other = finalRevenueByGender.Female.Other;
+  sortedFinalRevenueByGender.Male.Other = finalRevenueByGender.Male.Other;
+
+  return sortedFinalRevenueByGender;
+}
+
+// Function to update revenue chart by gender
+function updateRevenueByGenderChart() {
+  const selectedYear = yearDropdown.value;
+  const filteredRevenueData = processRevenueDataByGender(rawData, selectedYear);
+
+  const subCategories = Object.keys(filteredRevenueData.Female);
+  revenueByGenderChart.data.labels = subCategories;
+  revenueByGenderChart.data.datasets[0].data = subCategories.map(
+    (subCategory) => filteredRevenueData.Female[subCategory] || 0
+  );
+  revenueByGenderChart.data.datasets[1].data = subCategories.map(
+    (subCategory) => filteredRevenueData.Male[subCategory] || 0
+  );
+
+  revenueByGenderChart.update(); // Update the chart with new data
+}
+
+// Fetch or load your JSON data here
+fetch("../../../data/data.json") // Replace with your data loading method
+  .then((response) => response.json())
+  .then((data) => {
+    rawData = data;
+    const initialData = processRevenueDataByGender(data, "all");
+
+    const ctx = document.getElementById("doubleBarChart").getContext("2d");
+    const labels = Object.keys(initialData.Female);
+    const femaleRevenueValues = Object.values(initialData.Female);
+    const maleRevenueValues = Object.values(initialData.Male);
+
+    revenueByGenderChart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: "Female",
+            data: femaleRevenueValues,
+            backgroundColor: "#b07cff",
+            borderWidth: 1,
+          },
+          {
+            label: "Male",
+            data: maleRevenueValues,
+            backgroundColor: "#6b7dff",
+            borderWidth: 1,
+          },
+        ],
       },
-      plugins: {
-        title: {
-          display: true,
-          text: "Sub Category Product by Gender",
+      options: {
+        maintainAspectRatio: false,
+        indexAxis: "x",
+        scales: {
+          y: {
+            beginAtZero: true,
+            stacked: true,
+          },
+          x: {
+            stacked: true,
+          },
         },
-        legend: {
-          labels: {
-            font: {
-              family: "Poppins",
+        plugins: {
+          title: {
+            display: true,
+            text: "Total Revenue Sub Category by Gender",
+          },
+          legend: {
+            labels: {
+              font: {
+                family: "Poppins",
+              },
             },
           },
         },
       },
-    },
-  };
-
-  // Init chart
-  const barChart = new Chart(
-    document.getElementById("doubleBarChart"),
-    chartConfig
-  );
-});
+    });
+  });

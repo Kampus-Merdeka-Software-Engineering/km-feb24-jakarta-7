@@ -55,6 +55,7 @@ function updateProfitChart() {
     // Update profit chart with new data
     profitChart.data.labels = Object.keys(dataProfitFiltered);
     profitChart.data.datasets[0].data = Object.values(dataProfitFiltered);
+    profitChart.options.plugins.title.text = `Profit Growth ${yearSelected === 'all' ? 'by Year' : yearSelected}`
     profitChart.update(); // Update the chart with new data
 }
 

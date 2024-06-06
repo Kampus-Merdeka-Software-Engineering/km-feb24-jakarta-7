@@ -40,6 +40,16 @@
     }
   },
   {
+    "name": "M Daffa Ariftama",
+    "position": "Frontend Developer",
+    "image": "https://i.ibb.co.com/LR4z2LQ/foto-daffa-bangkit.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/daffa-ariftama",
+      "instagram": "https://www.instagram.com/daffaariftamaa/",
+      "twitter": "#"
+    }
+  },
+  {
     "name": "Mita Permatasari",
     "position": "Frontend Developer",
     "image": "https://i.ibb.co.com/1dpQ35D/1714999149390.jpg",
@@ -50,12 +60,22 @@
     }
   },
   {
-    "name": "M Daffa Ariftama",
+    "name": "M Wahyudi Rahmatul",
     "position": "Frontend Developer",
-    "image": "https://i.ibb.co.com/LR4z2LQ/foto-daffa-bangkit.jpg",
+    "image": "https://i.ibb.co.com/sW5zR27/gr-jpg.jpg",
     "social": {
-      "linkedin": "https://www.linkedin.com/in/daffa-ariftama",
-      "instagram": "https://www.instagram.com/daffaariftamaa/",
+      "linkedin": "http://www.linkedin.com/in/whyudiqd",
+      "instagram": "https://www.instagram.com/whyudi_qd/",
+      "twitter": "#"
+    }
+  },
+  {
+    "name": "Erik Adli Arisyi",
+    "position": "Frontend Developer",
+    "image": "https://i.ibb.co.com/hYCLbGT/Whats-App-Image-2024-06-03-at-8-48-50-AM.jpg",
+    "social": {
+      "linkedin": "www.linkedin.com/in/erik-arisyi-21a2472a1",
+      "instagram": "https://www.instagram.com/erik.arisyi/",
       "twitter": "#"
     }
   },
