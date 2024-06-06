@@ -49,7 +49,7 @@ function updateRevenueChart() {
 }
 
 // Fetch or load your JSON data here
-fetch("../../../data/data.json") // Replace with your data loading method
+fetch("./data/data.json") // Replace with your data loading method
   .then((response) => response.json())
   .then((data) => {
     rawData = data;

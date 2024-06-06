@@ -1,7 +1,7 @@
 // datatable
 $(document).ready(function () {
   $.ajax({
-    url: "../../../data/data.json",
+    url: "./data/data.json",
     dataType: "json",
     success: function (data) {
       var table = $("#dataTables").DataTable({
