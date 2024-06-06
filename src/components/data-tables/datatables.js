@@ -1,7 +1,7 @@
 // datatable
 $(document).ready(function () {
   $.ajax({
-    url: "https://raw.githubusercontent.com/Kampus-Merdeka-Software-Engineering/km-feb24-jakarta-7/main/data/australia_bike_sales.json",
+    url: "../../../data/data.json",
     dataType: "json",
     success: function (data) {
       var table = $("#dataTables").DataTable({
