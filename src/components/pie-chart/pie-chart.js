@@ -1,12 +1,8 @@
 let salesData;
 let pieChart;
 
-document.addEventListener("DOMContentLoaded", function () {
-  const yearDropdown = document.getElementById("year");
-  yearDropdown.addEventListener("change", updatePieChart);
-
-  fetchSalesData();
-});
+yearDropdown.addEventListener("change", updatePieChart);
+fetchSalesData();
 
 function fetchSalesData() {
   fetch("./data/data.json")
@@ -62,7 +58,8 @@ function processData(data, yearFilter) {
 
   // Calculate percentages
   for (const state in profitDataFiltered) {
-    profitDataFiltered[state] = (profitDataFiltered[state] / totalOrderQuantity) * 100;
+    profitDataFiltered[state] =
+      (profitDataFiltered[state] / totalOrderQuantity) * 100;
   }
 
   return profitDataFiltered;
@@ -118,7 +115,6 @@ function createPieChart(data) {
     },
   });
 }
-
 
 function updateChartData(data) {
   pieChart.data.labels = Object.keys(data);

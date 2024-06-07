@@ -1,5 +1,6 @@
-// datatable
 $(document).ready(function () {
+  $("#loading").addClass("show");
+
   $.ajax({
     url: "./data/data.json",
     dataType: "json",
@@ -30,7 +31,14 @@ $(document).ready(function () {
         rowReorder: {
           selector: "td:nth-child(2)",
         },
+        initComplete: function () {
+          $("#loading").removeClass("show");
+          $("#dataTables").show();
+        },
       });
+    },
+    error: function () {
+      $("#loading").text("Failed to load data");
     },
   });
 });

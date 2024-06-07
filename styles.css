@@ -16,6 +16,7 @@ body {
   font-weight: bolder;
 }
 
+/* Modal */
 .modal {
   display: none;
   flex-direction: column;
@@ -110,21 +111,6 @@ body {
 
 .modal-input input[type="button"]:hover {
   background-color: #4a7dee;
-}
-
-@media (max-width: 600px) {
-  .modal {
-    padding: 1em;
-  }
-  .modal-content {
-    font-size: 12px;
-  }
-  .modal-input input[type="text"] {
-    max-width: 90%;
-  }
-  .modal-input input[type="button"] {
-    padding: 8px 16px;
-  }
 }
 
 .container {
@@ -487,6 +473,18 @@ a:active {
 }
 
 /* data table */
+
+.loading {
+  display: none;
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+}
+
+.loading.show {
+  display: block;
+}
+
 .container-data-table {
   font-size: 12px;
   background-color: white;
@@ -527,6 +525,7 @@ thead {
   );
   color: white;
 }
+
 
 /* media */
 /* Extra small devices (phones, 600px and down) */
@@ -598,6 +597,19 @@ thead {
       "col-2"
       "col-3"
       "col-4";
+  }
+
+  .modal {
+    padding: 1em;
+  }
+  .modal-content {
+    font-size: 12px;
+  }
+  .modal-input input[type="text"] {
+    max-width: 90%;
+  }
+  .modal-input input[type="button"] {
+    padding: 8px 16px;
   }
 }
 

@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
   const modal = document.querySelector('.modal');
   const title = document.querySelector('.title');
   const maxNameLength = 15;
@@ -25,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('name', truncatedName);
       title.textContent = `Welcome ${truncatedName}!`;
       modal.style.display = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       alert('Please enter a name.');
     }
@@ -35,5 +35,5 @@ document.addEventListener('DOMContentLoaded', function() {
     sessionStorage.setItem('name', defaultName);
     title.textContent = defaultName;
     modal.style.display = 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-});
