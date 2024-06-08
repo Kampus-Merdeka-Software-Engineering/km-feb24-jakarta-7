@@ -70,6 +70,11 @@ fetch("./data/data.json") // Replace with your data loading method
         const labels = Object.keys(initialData);
         const profitValues = Object.values(initialData);
 
+        // Create gradient
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, "rgba(176, 124, 255, 1)");
+        gradient.addColorStop(1, "rgba(176, 124, 255, 0.1)");
+
         profitChart = new Chart(ctx, {
             type: "line",
             data: {
@@ -79,7 +84,7 @@ fetch("./data/data.json") // Replace with your data loading method
                         label: "Profit",
                         data: profitValues,
                         borderColor: "#B07CFF",
-                        backgroundColor: "rgb(176, 124, 255, .4)",
+                        backgroundColor: gradient,
                         tension: 0.4,
                         fill: true,
                     },
@@ -88,8 +93,16 @@ fetch("./data/data.json") // Replace with your data loading method
             options: {
                 maintainAspectRatio: false,
                 scales: {
+                    x: {
+                        grid: {
+                            display: false, // Hide grid for x-axis
+                        },
+                    },
                     y: {
                         beginAtZero: true,
+                        grid: {
+                            display: false, // Hide grid for y-axis
+                        },
                     },
                 },
                 plugins: {
