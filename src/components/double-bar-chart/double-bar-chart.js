@@ -80,6 +80,7 @@ function updateRevenueByGenderChart() {
   revenueByGenderChart.data.datasets[1].data = subCategories.map(
     (subCategory) => filteredRevenueData.Male[subCategory] || 0
   );
+  revenueByGenderChart.options.plugins.title.text = `Total Revenue Sub Category by Gender ${selectedYear == 'all' ? '' : selectedYear}`;
 
   revenueByGenderChart.update(); // Update the chart with new data
 }

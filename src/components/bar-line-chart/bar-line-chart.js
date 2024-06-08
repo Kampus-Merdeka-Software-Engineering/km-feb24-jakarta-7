@@ -72,11 +72,12 @@ function updateOrderChart() {
   orderChart.data.labels = subCategories;
   orderChart.data.datasets[0].data = Object.values(totalOrders);
   orderChart.data.datasets[1].data = Object.values(totalProfits);
+  orderChart.options.plugins.title.text = `Total Order by Sub Category Product ${yearSelected == 'all' ? '' : yearSelected}`;
 
   orderChart.update(); // Update the chart with new data
 }
 
-// Function to format numbers with "jt" or "rb"
+// Function to format numbers with "M" or "K"
 function formatNumber(value) {
   if (value >= 1000000) {
     return (value / 1000000).toFixed(1) + "M";

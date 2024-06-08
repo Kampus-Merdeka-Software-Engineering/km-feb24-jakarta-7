@@ -48,19 +48,22 @@ body {
 
 .modal-header {
   text-align: center;
-  color: #000;
+  color: #333;
   margin-bottom: 1em;
 }
 
 .modal-content {
   background: rgba(245, 245, 245, 0.5);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: 100%;
+  max-width: 700px;
+  align-self: center;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 1em;
-  color: #333;
+  color: #2b2b2b;
   font-size: 14px;
   line-height: 1.6;
   text-align: justify;
@@ -72,6 +75,10 @@ body {
   row-gap: 1em;
   text-align: center;
   margin-top: 1em;
+}
+
+.modal-input h3 {
+  color: #333;
 }
 
 .modal-input label {
@@ -332,12 +339,11 @@ canvas {
 /* about */
 
 #about {
-  padding-block: 2.5em;
   background-image: url("https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
 }
 
 .about-content {
@@ -351,6 +357,9 @@ canvas {
 }
 
 .about-column {
+  display: flex;
+  flex-direction: column;
+  row-gap: .3em;
   padding: 1em;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 16px;
@@ -376,7 +385,6 @@ canvas {
 /* team */
 
 #team {
-  /* background-image: url("./assets/mesh-gradient.png"); */
   background-position: center;
   background-size: cover;
   padding: 20px;
@@ -533,6 +541,81 @@ thead {
   color: white;
 }
 
+/* footer */
+.footer {
+  background: #282c34;
+  color: #fff;
+  padding-top: 40px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 20px;
+  min-width: 200px;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  background: linear-gradient(to right, rgb(176, 124, 255), rgb(74, 125, 238))
+    text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  background: #222;
+  color: #bbb;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-logo {
+  display: flex;
+  gap: 15px;
+}
 
 /* media */
 /* Extra small devices (phones, 600px and down) */
@@ -619,9 +702,6 @@ thead {
   .modal-input input[type="text"] {
     max-width: 90%;
   }
-  .modal-input input[type="button"] {
-    padding: 8px 16px;
-  }
 }
 
 /* Tablet (601px to 900px) */
@@ -665,80 +745,4 @@ thead {
       "total-product";
     gap: 1em;
   }
-}
-
-
-/* footer */
-.footer {
-  background: #282c34;
-  color: #fff;
-  padding-top: 40px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.footer-section {
-  flex: 1;
-  margin: 20px;
-  min-width: 200px;
-}
-
-.footer-section h4 {
-  font-size: 18px;
-  background: linear-gradient(to right, rgb(176, 124, 255), rgb(74, 125, 238))
-  text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.footer-section p, .footer-section ul {
-  font-size: 14px;
-  line-height: 24px;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-  text-decoration: underline;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding: 20px 0;
-  background: #222;
-  color: #bbb;
-  margin-top: 20px;
-}
-
-.footer-bottom p {
-  margin: 0;
-}
-
-.footer-logo {
-  display: flex;
-  gap: 15px;
 }

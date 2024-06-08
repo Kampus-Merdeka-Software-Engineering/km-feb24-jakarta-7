@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const socialLinks = [
           { platform: "linkedin", url: member.social.linkedin },
           { platform: "instagram", url: member.social.instagram },
-          { platform: "twitter", url: member.social.twitter },
+          { platform: "github", url: member.social.github },
         ];
 
         socialLinks.forEach((socialLink) => {

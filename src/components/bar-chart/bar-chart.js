@@ -45,6 +45,7 @@ function updateRevenueChart() {
   // Update revenue chart with new data
   revenueChart.data.labels = Object.keys(dataRevenueFiltered);
   revenueChart.data.datasets[0].data = Object.values(dataRevenueFiltered);
+  revenueChart.options.plugins.title.text = `Revenue per Product Category ${yearSelected == 'all' ? '' : yearSelected}`;
   revenueChart.update(); // Update the chart with new data
 }
 

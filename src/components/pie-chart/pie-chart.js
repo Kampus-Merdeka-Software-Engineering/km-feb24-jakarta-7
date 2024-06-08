@@ -23,7 +23,7 @@ function updatePieChart() {
   if (!pieChart) {
     createPieChart(filteredProfitData);
   } else {
-    updateChartData(filteredProfitData);
+    updateChartData(filteredProfitData, selectedYear);
   }
 }
 
@@ -101,7 +101,7 @@ function createPieChart(data) {
         },
         title: {
           display: true,
-          text: "Order Quantity by State (%)",
+          text: "Order Quantity by State",
         },
         tooltip: {
           callbacks: {
@@ -116,8 +116,15 @@ function createPieChart(data) {
   });
 }
 
-function updateChartData(data) {
+function updateChartData(data, selectedYear) {
   pieChart.data.labels = Object.keys(data);
   pieChart.data.datasets[0].data = Object.values(data);
+
+  let chartTitle = "Order Quantity by State";
+  if (selectedYear !== "all") {
+    chartTitle += "Year " + selectedYear;
+  }
+  pieChart.options.plugins.title.text = chartTitle;
+
   pieChart.update();
 }
