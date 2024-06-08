@@ -337,6 +337,7 @@ canvas {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 20px;
 }
 
 .about-content {
@@ -347,12 +348,11 @@ canvas {
     "col-1 col-2"
     "col-3 col-4";
   gap: 1em;
-  padding: 20px;
 }
 
 .about-column {
   padding: 1em;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
